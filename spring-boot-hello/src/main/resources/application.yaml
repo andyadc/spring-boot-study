@@ -1,0 +1,5 @@
+boot:
+  secret: andyadc
+
+server:
+  port: 9090
