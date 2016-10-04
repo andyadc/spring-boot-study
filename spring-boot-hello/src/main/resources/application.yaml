@@ -1,3 +1,23 @@
 spring:
   profiles:
     active: test
+
+---
+spring:
+  profiles: test
+
+boot:
+  secret: a
+
+server:
+  port: 8081
+
+---
+spring:
+  profiles: dev
+
+boot:
+  secret: a
+
+server:
+  port: 8082
