@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 /**
  * @author andaicheng
  */
@@ -17,5 +19,10 @@ public class HelloController {
     @RequestMapping({""})
     String hello() {
         return secret;
+    }
+
+    @RequestMapping("/time")
+    public Object time(){
+        return new Date();
     }
 }
