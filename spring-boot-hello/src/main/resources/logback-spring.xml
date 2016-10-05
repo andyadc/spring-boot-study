@@ -2,7 +2,9 @@
 <configuration>
 
     <property name="PATTER" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{0} - %msg%n"/>
-    <property name="TEST_LOG_PATH" value="d:/temp/spring-boot-study/logs"/>
+    <property name="TEST_LOG_PATH" value="d:/temp/logs/spring-boot-study/test"/>
+    <property name="DEV_LOG_PATH" value="d:/temp/logs/spring-boot-study/dev"/>
+    <property name="PROD_LOG_PATH" value="/usr/logs"/>
 
     <!-- 测试环境-->
     <springProfile name="test">
@@ -12,8 +14,22 @@
             </encoder>
         </appender>
 
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${TEST_LOG_PATH}/springbootstudy.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>
+                    ${TEST_LOG_PATH}/springbootstudy_%d{yyyy-MM-dd}.log
+                </fileNamePattern>
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+            <encoder>
+                <pattern>${PATTER}</pattern>
+            </encoder>
+        </appender>
+
         <root level="debug">
             <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="FILE"/>
         </root>
     </springProfile>
 
@@ -25,8 +41,22 @@
             </encoder>
         </appender>
 
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${DEV_LOG_PATH}/springbootstudy.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>
+                    ${DEV_LOG_PATH}/springbootstudy_%d{yyyy-MM-dd}.log
+                </fileNamePattern>
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+            <encoder>
+                <pattern>${PATTER}</pattern>
+            </encoder>
+        </appender>
+
         <root level="info">
             <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="FILE"/>
         </root>
     </springProfile>
 
@@ -38,8 +68,22 @@
             </encoder>
         </appender>
 
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${PROD_LOG_PATH}/springbootstudy.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>
+                    ${PROD_LOG_PATH}/springbootstudy_%d{yyyy-MM-dd}.log
+                </fileNamePattern>
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+            <encoder>
+                <pattern>${PATTER}</pattern>
+            </encoder>
+        </appender>
+
         <root level="info">
             <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="FILE"/>
         </root>
     </springProfile>
 </configuration>
