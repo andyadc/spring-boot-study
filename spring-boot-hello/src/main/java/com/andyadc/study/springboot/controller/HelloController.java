@@ -16,13 +16,18 @@ public class HelloController {
     @Value(value = "${boot.secret}")
     private String secret;
 
-    @RequestMapping({""})
-    String hello() {
+    @RequestMapping("")
+    public String hello() {
+        return "Hello";
+    }
+
+    @RequestMapping({"/secret"})
+    String secret() {
         return secret;
     }
 
     @RequestMapping("/time")
-    public Object time(){
+    public Object time() {
         return new Date();
     }
 }
