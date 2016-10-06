@@ -4,7 +4,11 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: Asia/Shanghai
+  output:
+    ansi:
+      enabled: DETECT
 
+#测试环境
 ---
 spring:
   profiles: test
@@ -15,6 +19,7 @@ boot:
 server:
   port: 8081
 
+#开发环境
 ---
 spring:
   profiles: dev
