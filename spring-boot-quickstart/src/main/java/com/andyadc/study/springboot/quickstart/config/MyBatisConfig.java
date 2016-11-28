@@ -2,12 +2,17 @@ package com.andyadc.study.springboot.quickstart.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
@@ -38,7 +43,7 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
 
     @Bean(destroyMethod = "close")
     @Primary
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         HikariConfig config = new HikariConfig();
         config.setDriverClassName(driverClass);
         config.setJdbcUrl(jdbcUrl);
@@ -49,9 +54,25 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
         return dataSource;
     }
 
+    @Bean
+    public SqlSessionFactory sqlSessionFactory() {
+        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+        bean.setDataSource(dataSource());
+
+        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        try {
+            bean.setMapperLocations(resolver.getResources("classpath:mapper/**.xml"));
+            return bean.getObject();
+        } catch (Exception e) {
+            LOG.error("resolver mapper or get sqlSessionFactory error!", e);
+            throw new RuntimeException(e);
+        }
+    }
 
     @Override
     public PlatformTransactionManager annotationDrivenTransactionManager() {
-        return null;
+        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager(dataSource());
+        
+        return transactionManager;
     }
 }
