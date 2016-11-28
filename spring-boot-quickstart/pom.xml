@@ -16,12 +16,19 @@
     <properties>
         <caffeine.version>2.3.5</caffeine.version>
         <mysql.version>5.1.40</mysql.version>
+        <HikariCP.version>2.5.1</HikariCP.version>
         <swagger.version>2.6.1</swagger.version>
         <junit.version>4.12</junit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!-- local cache -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -33,16 +40,29 @@
             <version>${caffeine.version}</version>
         </dependency>
 
-        <!-- jdbc -->
+        <!-- db -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.1.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.maven</groupId>
+                    <artifactId>tomcat-jdbc</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>${HikariCP.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
+
         <!-- Swagger2 -->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -62,4 +82,9 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>spring-boot-quickstart</finalName>
+    </build>
+
 </project>
