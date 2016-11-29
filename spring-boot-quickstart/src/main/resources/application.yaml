@@ -8,7 +8,7 @@ spring:
       time-zone: Asia/Shanghai
   output:
       ansi:
-        enabled:
+        enabled: DETECT
 
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
@@ -19,7 +19,7 @@ spring:
   profiles: dev
   datasource:
     username: root
-    password: xx
+    password: pwd
     url: jdbc:mysql://localhost:3306/spring_boot
 
 server:
@@ -31,8 +31,8 @@ server:
 spring:
   profiles: test
   datasource:
-    username: xx
-    password: xx
+    username: name
+    password: pwd
     url: jdbc:mysql://localhost:3306/spring_boot
 
 server:
@@ -44,8 +44,8 @@ server:
 spring:
   profiles: prod
   datasource:
-    username: xx
-    password: xx
+    username: name
+    password: pwd
     url: jdbc:mysql://localhost:3306/spring_boot
 
 server:
