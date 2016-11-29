@@ -40,6 +40,11 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
     @Value("${spring.datasource.password}")
     private String password;
 
+    @Value("${spring.hikari.maximumPoolSize}")
+    private int maximumPoolSize;
+    @Value("${spring.hikari.maxLifetime}")
+    private long maxLifetime;
+
 
     @Bean(destroyMethod = "close")
     @Primary
@@ -49,9 +54,10 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
         config.setJdbcUrl(jdbcUrl);
         config.setUsername(username);
         config.setPassword(password);
+        config.setMaximumPoolSize(maximumPoolSize);
+        config.setMaxLifetime(maxLifetime);
 
-        HikariDataSource dataSource = new HikariDataSource(config);
-        return dataSource;
+        return new HikariDataSource(config);
     }
 
     @Bean
@@ -71,8 +77,6 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
 
     @Override
     public PlatformTransactionManager annotationDrivenTransactionManager() {
-        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager(dataSource());
-        
-        return transactionManager;
+        return new DataSourceTransactionManager(dataSource());
     }
 }
