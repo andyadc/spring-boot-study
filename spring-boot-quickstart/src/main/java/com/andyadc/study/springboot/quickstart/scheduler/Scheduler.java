@@ -18,4 +18,9 @@ public class Scheduler {
     public void testTask(){
         LOG.info("每20秒执行一次...");
     }
+
+    @Scheduled(cron = "10/5 * * * * ?")
+    public void testCron() {
+        LOG.info("每5秒执行一次...");
+    }
 }
