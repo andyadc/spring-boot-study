@@ -15,7 +15,7 @@ public class Scheduler {
     private static final Logger LOG = LoggerFactory.getLogger(Scheduler.class);
 
     @Scheduled(fixedRate = 20000)
-    public void testTask(){
+    public void testTask() {
         LOG.info("每20秒执行一次...");
     }
 
