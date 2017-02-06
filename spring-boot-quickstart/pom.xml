@@ -20,7 +20,7 @@
     <properties>
         <caffeine.version>2.3.5</caffeine.version>
         <mysql.version>5.1.40</mysql.version>
-        <HikariCP.version>2.5.1</HikariCP.version>
+        <HikariCP.version>2.6.0</HikariCP.version>
         <swagger.version>2.6.1</swagger.version>
         <junit.version>4.12</junit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
