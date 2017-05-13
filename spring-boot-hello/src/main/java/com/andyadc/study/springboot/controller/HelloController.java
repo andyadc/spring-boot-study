@@ -1,33 +1,28 @@
 package com.andyadc.study.springboot.controller;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * @author andaicheng
  */
-@RestController
-@RequestMapping("/hello")
+@Controller
 public class HelloController {
 
-    @Value(value = "${boot.secret}")
-    private String secret;
-
     @RequestMapping("")
-    public String hello() {
-        return "Hello";
+    public String hello(ModelMap map) {
+        map.put("now", LocalDate.now());
+        return "index";
     }
 
-    @RequestMapping({"/secret"})
-    String secret() {
-        return secret;
-    }
-
+    @ResponseBody
     @RequestMapping("/time")
     public Object time() {
-        return new Date();
+        return LocalDateTime.now();
     }
 }

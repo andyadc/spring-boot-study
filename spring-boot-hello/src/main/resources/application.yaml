@@ -1,36 +1,11 @@
 spring:
-  profiles:
-    active: test
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: Asia/Shanghai
+
   output:
     ansi:
       enabled: DETECT
 
-#测试环境
----
-spring:
-  profiles: test
-  datasource:
-    url: jdbc:mysql://localhost:3306/spring_boot
-    username: root
-    password: andyadc
-    driver-class-name: com.mysql.jdbc.Driver
-
-boot:
-  secret: a
-
 server:
-  port: 8081
-
-#开发环境
----
-spring:
-  profiles: dev
-
-boot:
-  secret: a
-
-server:
-  port: 8082
+  port: 8080
