@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration scan="true" scanPeriod="60 second" debug="false">
+<configuration scan="false" scanPeriod="60 second" debug="true">
 
     <!--  Output to Console -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">

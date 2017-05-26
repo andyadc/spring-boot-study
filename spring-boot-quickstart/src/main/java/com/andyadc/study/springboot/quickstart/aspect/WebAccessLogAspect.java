@@ -18,7 +18,7 @@ public class WebAccessLogAspect {
 
     private static final Logger LOG = LoggerFactory.getLogger(WebAccessLogAspect.class);
 
-    ThreadLocal<Long> startTime = new ThreadLocal<Long>();
+    private ThreadLocal<Long> startTime = new ThreadLocal<Long>();
 
     @Pointcut("execution(public * com.andyadc.study.springboot.quickstart.web.controller..*.*(..))")
     public void accessLog(){}
@@ -31,6 +31,6 @@ public class WebAccessLogAspect {
     @AfterReturning(returning = "ret", pointcut = "accessLog()")
     public void doAfterReturning(Object ret) {
         LOG.info("response: {}", ret);
-        LOG.info("timing: {}ms", System.currentTimeMillis() - startTime.get());
+        LOG.info("elapsed time: {}ms", System.currentTimeMillis() - startTime.get());
     }
 }

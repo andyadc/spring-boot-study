@@ -56,6 +56,13 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
         config.setPassword(password);
         config.setMaximumPoolSize(maximumPoolSize);
         config.setMaxLifetime(maxLifetime);
+        config.setPoolName("springHikariCP");
+        config.setAutoCommit(false);
+        config.setConnectionInitSql("SELECT 1");
+        config.addDataSourceProperty("cachePrepStmts", "true");
+        config.addDataSourceProperty("prepStmtCacheSize", "250");
+        config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+        config.addDataSourceProperty("useServerPrepStmts", "true");
 
         return new HikariDataSource(config);
     }
@@ -64,6 +71,7 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
     public SqlSessionFactory sqlSessionFactory() {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource());
+        bean.setFailFast(true);
 
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try {
