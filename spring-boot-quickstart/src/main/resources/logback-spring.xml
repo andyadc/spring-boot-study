@@ -16,16 +16,15 @@
         <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <file>${LOG_PATH}/quickstart.log</file>
 
-            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <!-- rollover daily -->
                 <fileNamePattern>
                     ${LOG_PATH}/quickstart_%d{yyyy-MM-dd}-%i.log
                 </fileNamePattern>
-
+                <!-- each file should be at most 10MB, keep 60 days worth of history, but at most 20GB -->
                 <maxHistory>30</maxHistory>
-
-                <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                    <maxFileSize>1MB</maxFileSize>
-                </TimeBasedFileNamingAndTriggeringPolicy>
+                <maxFileSize>10MB</maxFileSize>
+                <totalSizeCap>20GB</totalSizeCap>
             </rollingPolicy>
 
             <encoder>
@@ -47,16 +46,15 @@
         <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <file>${LOG_PATH}/quickstart.log</file>
 
-            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <!-- rollover daily -->
                 <fileNamePattern>
                     ${LOG_PATH}/quickstart_%d{yyyy-MM-dd}-%i.log
                 </fileNamePattern>
-
+                <!-- each file should be at most 10MB, keep 60 days worth of history, but at most 20GB -->
                 <maxHistory>30</maxHistory>
-
-                <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                    <maxFileSize>10MB</maxFileSize>
-                </TimeBasedFileNamingAndTriggeringPolicy>
+                <maxFileSize>10MB</maxFileSize>
+                <totalSizeCap>20GB</totalSizeCap>
             </rollingPolicy>
 
             <encoder>
