@@ -14,7 +14,7 @@ import javax.servlet.Filter;
  */
 @SpringBootApplication
 @EnableScheduling
-public class App {
+public class Startup {
 
     @Bean
     public Filter characterEncodingFilter() {
@@ -25,6 +25,6 @@ public class App {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(Startup.class, args);
     }
 }

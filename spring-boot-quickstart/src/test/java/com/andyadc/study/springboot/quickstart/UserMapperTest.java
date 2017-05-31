@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @version 2016/11/28
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = {App.class})
+@SpringBootTest(classes = {Startup.class})
 public class UserMapperTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserMapperTest.class);

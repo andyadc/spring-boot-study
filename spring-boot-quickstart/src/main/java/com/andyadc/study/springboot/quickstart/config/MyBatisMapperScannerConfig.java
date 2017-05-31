@@ -14,6 +14,11 @@ import org.springframework.context.annotation.Configuration;
 @AutoConfigureAfter(MyBatisConfig.class)
 public class MyBatisMapperScannerConfig {
 
+    /**
+     * - 设置SqlSessionFactory；
+     * - 设置dao所在的package路径；
+     * - 关联注解在dao类上的Annotation名字；
+     */
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer configurer = new MapperScannerConfigurer();

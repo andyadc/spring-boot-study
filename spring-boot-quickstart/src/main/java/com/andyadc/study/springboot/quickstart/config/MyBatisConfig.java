@@ -45,7 +45,9 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
     @Value("${spring.hikari.maxLifetime}")
     private long maxLifetime;
 
-
+    /**
+     * 配置dataSource，使用Hikari连接池
+     */
     @Bean(destroyMethod = "close")
     @Primary
     public DataSource dataSource() {
