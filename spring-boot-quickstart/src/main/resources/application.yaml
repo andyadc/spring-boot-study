@@ -38,6 +38,12 @@ spring:
     password: pwd
     url: jdbc:mysql://localhost:3306/spring_boot
 
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    password:
+
 server:
   port: 8081
 
