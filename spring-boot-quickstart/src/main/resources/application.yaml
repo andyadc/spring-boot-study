@@ -23,6 +23,7 @@ spring:
 
 #actuator
 management:
+  context-path: /admin
   port: 8181
   security:
     enabled: false
