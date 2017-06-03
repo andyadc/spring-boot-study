@@ -44,6 +44,12 @@ spring:
     port: 6379
     password:
 
+  mail:
+    default-encoding: utf-8
+    host: smtp.163.com
+    username: andaicheng@163.com
+    password: pwd
+
 server:
   port: 8081
 
