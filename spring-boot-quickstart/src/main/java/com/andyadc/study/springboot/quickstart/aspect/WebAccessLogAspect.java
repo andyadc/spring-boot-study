@@ -32,7 +32,6 @@ public class WebAccessLogAspect {
 
     @AfterReturning(returning = "ret", pointcut = "accessLog()")
     public void doAfterReturning(Object ret) {
-        LOG.info("response: {}", ret);
-        LOG.info("elapsed time: {}ms", System.currentTimeMillis() - startTime.get());
+        LOG.info("Response: {}, Elapsed time: {}ms", ret, System.currentTimeMillis() - startTime.get());
     }
 }
