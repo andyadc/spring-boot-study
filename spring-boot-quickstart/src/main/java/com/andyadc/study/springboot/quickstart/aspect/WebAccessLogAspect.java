@@ -21,10 +21,12 @@ public class WebAccessLogAspect {
     private ThreadLocal<Long> startTime = new ThreadLocal<Long>();
 
     @Pointcut("execution(public * com.andyadc.study.springboot.quickstart.web.controller..*.*(..))")
-    public void accessLog(){}
+    public void accessLog() {
+        // NO-OP
+    }
 
     @Before("accessLog()")
-    public void doBefore(){
+    public void doBefore() {
         startTime.set(System.currentTimeMillis());
     }
 
