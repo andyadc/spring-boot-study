@@ -50,9 +50,12 @@ spring:
     username: andaicheng@163.com
     password: pwd
 
+# set log path. logging.path(Spring Environment) <---> LOG_PATH(System Property)
+logging:
+  path: d:/temp/logs/springboot/quickstart1
+
 server:
   port: 8081
-
 
 #test
 ---
@@ -62,6 +65,9 @@ spring:
     username: name
     password: pwd
     url: jdbc:mysql://localhost:3306/spring_boot
+
+logging:
+  path: d:/temp/logs/springboot/quickstart2
 
 server:
   port: 8082

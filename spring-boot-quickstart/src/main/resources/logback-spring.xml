@@ -10,7 +10,7 @@
 
     <!-- dev 环境-->
     <springProfile name="dev">
-        <property name="LOG_PATH" value="d:/temp/logs/springboot/quickstart1"/>
+        <!-- <property name="LOG_PATH" value="d:/temp/logs/springboot/quickstart1"/>-->
 
         <!-- Output to File -->
         <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -40,7 +40,7 @@
 
     <!-- test 环境-->
     <springProfile name="test">
-        <property name="LOG_PATH" value="d:/temp/logs/springboot/quickstart2"/>
+        <!--<property name="LOG_PATH" value="d:/temp/logs/springboot/quickstart2"/>-->
 
         <!-- Output to File -->
         <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
