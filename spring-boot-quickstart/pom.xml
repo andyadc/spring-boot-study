@@ -18,11 +18,12 @@
     </parent>
 
     <properties>
-        <caffeine.version>2.5.2</caffeine.version>
+        <caffeine.version>2.5.3</caffeine.version>
         <mysql.version>5.1.42</mysql.version>
-        <HikariCP.version>2.6.2</HikariCP.version>
+        <HikariCP.version>2.6.3</HikariCP.version>
         <swagger.version>2.7.0</swagger.version>
         <junit.version>4.12</junit.version>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>
