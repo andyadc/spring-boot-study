@@ -13,13 +13,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.4.RELEASE</version>
+        <version>1.5.5.RELEASE</version>
         <relativePath/>
     </parent>
 
     <properties>
         <caffeine.version>2.5.3</caffeine.version>
-        <mysql.version>5.1.42</mysql.version>
+        <mysql.version>5.1.43</mysql.version>
         <HikariCP.version>2.6.3</HikariCP.version>
         <swagger.version>2.7.0</swagger.version>
         <junit.version>4.12</junit.version>
