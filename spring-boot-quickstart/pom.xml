@@ -18,7 +18,7 @@
     </parent>
 
     <properties>
-        <caffeine.version>2.5.3</caffeine.version>
+        <caffeine.version>2.5.4</caffeine.version>
         <mysql.version>5.1.43</mysql.version>
         <HikariCP.version>2.6.3</HikariCP.version>
         <swagger.version>2.7.0</swagger.version>
