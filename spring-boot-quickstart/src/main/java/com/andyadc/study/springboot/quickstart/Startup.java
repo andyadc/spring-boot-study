@@ -16,15 +16,15 @@ import javax.servlet.Filter;
 @EnableScheduling
 public class Startup {
 
+    public static void main(String[] args) {
+        SpringApplication.run(Startup.class, args);
+    }
+
     @Bean
     public Filter characterEncodingFilter() {
         CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
         encodingFilter.setEncoding("UTF-8");
         encodingFilter.setForceEncoding(true);
         return encodingFilter;
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(Startup.class, args);
     }
 }
