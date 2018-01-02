@@ -2,13 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-boot-quickstart</artifactId>
     <groupId>com.andyadc</groupId>
+    <artifactId>spring-boot-quickstart</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>spring-boot-quickstart</name>
-    <url>https://github.com/andyadc/spring-boot-study</url>
+    <name>Quickstart</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -126,7 +125,7 @@
     </dependencies>
 
     <build>
-        <finalName>spring-boot-quickstart</finalName>
+        <finalName>quickstart</finalName>
 
         <plugins>
             <plugin>
