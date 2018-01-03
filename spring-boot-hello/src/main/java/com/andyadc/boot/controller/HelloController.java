@@ -1,5 +1,7 @@
 package com.andyadc.boot.controller;
 
+import com.andyadc.boot.exception.JsonException;
+import com.andyadc.boot.exception.PageException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,5 +32,15 @@ public class HelloController {
     @RequestMapping("/time")
     public Object time() {
         return LocalDateTime.now();
+    }
+
+    @RequestMapping("/json-error")
+    public Object jsonError() {
+        throw new JsonException("json");
+    }
+
+    @RequestMapping("/page-error")
+    public Object pageError() {
+        throw new PageException("page");
     }
 }

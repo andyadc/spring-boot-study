@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Error</title>
+</head>
+<body>
+<h1>Error Page</h1>
+<!--/*@thymesVar id="url" type="com.andyadc.boot.exception.GlobalExceptionHandler"*/-->
+<div th:text="${url}"></div>
+<div th:text="${exception.message}"></div>
+</body>
+</html>
