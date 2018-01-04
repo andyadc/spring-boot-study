@@ -26,10 +26,10 @@ public class GlobalExceptionHandler {
 
     @ResponseBody
     @ExceptionHandler(value = JsonException.class)
-    public ResponseInfo<String> jsonExceptionHandler(HttpServletRequest request, JsonException ex) throws Exception {
+    public ResponseInfo<?> jsonExceptionHandler(HttpServletRequest request, JsonException ex) throws Exception {
         ResponseInfo<String> info = new ResponseInfo<>();
-        info.setCode("505");
-        info.setMessage("some wrong");
+        info.setCode(ex.getCode());
+        info.setMessage(ex.getMessage());
         info.setData(request.getRequestURL().toString());
         return info;
     }
