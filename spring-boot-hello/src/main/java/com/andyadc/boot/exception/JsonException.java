@@ -6,36 +6,36 @@ package com.andyadc.boot.exception;
  */
 public class JsonException extends RuntimeException {
 
-    private String code;
-    private String message;
+    private static final long serialVersionUID = 5528535373583685274L;
+
+    private String errorCode;
+    private String errorMessage;
 
     public JsonException(String message) {
-        super(message);
-        this.message = message;
+        this.errorMessage = message;
     }
 
     public JsonException(String message, Throwable cause) {
-        super(message, cause);
-        this.message = message;
+        super(cause);
+        this.errorMessage = message;
     }
 
     public JsonException(String code, String message) {
-        this.code = code;
-        this.message = message;
+        this.errorCode = code;
+        this.errorMessage = message;
     }
 
     public JsonException(String code, String message, Throwable cause) {
-        super(message, cause);
-        this.code = code;
-        this.message = message;
+        super(cause);
+        this.errorCode = code;
+        this.errorMessage = message;
     }
 
-    public String getCode() {
-        return code;
+    public String getErrorCode() {
+        return errorCode;
     }
 
-    @Override
-    public String getMessage() {
-        return message;
+    public String getErrorMessage() {
+        return errorMessage;
     }
 }

@@ -28,8 +28,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = JsonException.class)
     public ResponseInfo<?> jsonExceptionHandler(HttpServletRequest request, JsonException ex) throws Exception {
         ResponseInfo<String> info = new ResponseInfo<>();
-        info.setCode(ex.getCode());
-        info.setMessage(ex.getMessage());
+        info.setCode(ex.getErrorCode());
+        info.setMessage(ex.getErrorMessage());
         info.setData(request.getRequestURL().toString());
         return info;
     }
