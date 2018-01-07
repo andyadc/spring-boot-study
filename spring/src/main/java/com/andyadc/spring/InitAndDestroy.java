@@ -13,13 +13,13 @@ public class InitAndDestroy implements InitializingBean, DisposableBean {
 
     @Override
     public void destroy() throws Exception {
-        TimeUnit.SECONDS.sleep(10);
+        TimeUnit.SECONDS.sleep(1);
         System.out.println("---------------Disposable--------------");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        TimeUnit.SECONDS.sleep(5);
+        TimeUnit.SECONDS.sleep(1);
         System.out.println("-------------Initializing----------------");
     }
 }
