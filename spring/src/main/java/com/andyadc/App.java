@@ -2,6 +2,8 @@ package com.andyadc;
 
 import com.andyadc.spring.MyBean;
 import com.andyadc.spring.MyConfig;
+import com.andyadc.spring.MyFactoryBean;
+import com.andyadc.spring.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -13,7 +15,14 @@ public class App {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
         System.out.println(context.getBean(MyBean.class));
-        System.out.println(context.getBean("createBean"));
+        System.out.println(context.getBean("mybean"));
 
+        System.out.println(context.getBean(User.class));
+        System.out.println(context.getBean("myFactoryBean"));
+
+        System.out.println(context.getBean(MyFactoryBean.class));
+        System.out.println(context.getBean("&myFactoryBean"));
+
+        context.close();
     }
 }

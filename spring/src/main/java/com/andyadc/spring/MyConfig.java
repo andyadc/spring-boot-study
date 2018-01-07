@@ -11,10 +11,20 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class MyConfig {
 
-    @Bean
+    @Bean(name = "mybean")
     //@Scope(value = "prototype")
     @Scope(value = "singleton")
     public MyBean createBean() {
         return new MyBean();
+    }
+
+    @Bean
+    public MyFactoryBean myFactoryBean() {
+        return new MyFactoryBean();
+    }
+
+    @Bean
+    public InitAndDestroy initAndDestroy() {
+        return new InitAndDestroy();
     }
 }
