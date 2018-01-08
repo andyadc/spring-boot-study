@@ -1,6 +1,5 @@
 package com.andyadc.boot;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
@@ -43,6 +42,7 @@ public class CustomConfig {
         System.out.println("local port: " + port);
 
         System.out.println(environment.getProperty("local.flag"));
+        System.out.println(environment.getProperty("local.name"));
     }
 
     //set 注入
