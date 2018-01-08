@@ -1,6 +1,7 @@
 package com.andyadc;
 
 import com.andyadc.boot.CustomConfig;
+import com.andyadc.boot.JdbcConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -16,6 +17,7 @@ public class App {
         ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
 
         context.getBean(CustomConfig.class).show();
+        context.getBean(JdbcConfig.class).show();
 
         context.close();
     }
