@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Conditional;
  * @author andaicheng
  * @since 2018/1/9
  */
-//@Conditional(UTF8Condition.class)
+//@Conditional({UTF8Condition.class, GBKCondition.class}) // 同时为true
 @SpringBootConfiguration
 public class EncodingConvertConfiguration {
 
