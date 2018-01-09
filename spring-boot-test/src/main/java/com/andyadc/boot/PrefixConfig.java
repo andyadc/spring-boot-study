@@ -18,11 +18,14 @@ public class PrefixConfig {
 
     private String flag;
 
+    // TODO 无法注入成功???
     private List<String> ports = new ArrayList<>();
 
+    // TODO 无法注入成功???
     private String[] hosts;
 
     public void show() {
+        System.out.println("-----prefix configuration-----");
         System.out.println("prefix ip " + ip);
         System.out.println("prefix flag " + flag);
         System.out.println("prefix ports " + ports);
