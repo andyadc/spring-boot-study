@@ -1,6 +1,7 @@
 package com.andyadc;
 
 import com.andyadc.boot.CustomConfig;
+import com.andyadc.boot.EncodingConvert;
 import com.andyadc.boot.JdbcConfig;
 import com.andyadc.boot.PrefixConfig;
 import org.springframework.boot.SpringApplication;
@@ -21,6 +22,7 @@ public class App {
         context.getBean(JdbcConfig.class).show();
         context.getBean(PrefixConfig.class).show();
 
+        System.out.println(context.getBeansOfType(EncodingConvert.class));
         context.close();
     }
 }
