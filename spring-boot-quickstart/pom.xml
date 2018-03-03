@@ -12,15 +12,15 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
+        <version>1.5.10.RELEASE</version>
         <relativePath/>
     </parent>
 
     <properties>
-        <caffeine.version>2.6.1</caffeine.version>
+        <caffeine.version>2.6.2</caffeine.version>
         <mysql.version>5.1.45</mysql.version>
-        <HikariCP.version>2.7.4</HikariCP.version>
-        <swagger.version>2.7.0</swagger.version>
+        <HikariCP.version>2.7.8</HikariCP.version>
+        <swagger.version>2.8.0</swagger.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
