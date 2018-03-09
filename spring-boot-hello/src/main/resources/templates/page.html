@@ -7,7 +7,8 @@
 <body>
 <h1>Error Page</h1>
 <!--/*@thymesVar id="url" type="com.andyadc.boot.exception.GlobalExceptionHandler"*/-->
-<div th:text="${url}"></div>
-<div th:text="${exception.message}"></div>
+<div th:text="${exception.message}" style="font-size: larger; color: black"></div>
+<hr/>
+<div th:text="${url}" style="font-size: smaller; color: darkgrey"></div>
 </body>
 </html>

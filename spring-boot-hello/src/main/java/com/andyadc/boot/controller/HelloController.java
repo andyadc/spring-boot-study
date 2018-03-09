@@ -36,11 +36,11 @@ public class HelloController {
 
     @RequestMapping("/json-error")
     public Object jsonError() {
-        throw new JsonException("520", "nonono");
+        throw new JsonException("555", "JSON ERROR");
     }
 
     @RequestMapping("/page-error")
     public Object pageError() {
-        throw new PageException("page");
+        throw new PageException("Opps! PAGE ERROR");
     }
 }

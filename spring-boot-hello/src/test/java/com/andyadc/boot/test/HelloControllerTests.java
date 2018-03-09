@@ -3,6 +3,7 @@ package com.andyadc.boot.test;
 import com.andyadc.boot.App;
 import com.andyadc.boot.controller.HelloController;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,6 +32,7 @@ public class HelloControllerTests {
         mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
     }
 
+    @Ignore
     @Test
     public void testHello() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))

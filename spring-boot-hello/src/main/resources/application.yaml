@@ -13,4 +13,15 @@ spring:
     mode: HTML5
 
 server:
-  port: 8080
+  port: 9999
+  context-path: /
+  tomcat:
+    max-threads: 500
+    min-spare-threads: 30
+    uri-encoding: utf-8
+    basedir: /opt/apps/hello
+    accesslog:
+      enabled: true
+
+logging:
+  path: /opt/apps/hello
